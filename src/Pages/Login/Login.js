@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -7,12 +7,35 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
+
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { AuthContext } from '../../router/AuthProvider/AuthProvider';
+
+
 const Login = () => {
+
+       const {googleSigin} = useContext(AuthContext)
+
+
+         const handlarGoogle = ()=>{
+
+          googleSigin()
+          .then((result)=>{
+            const user = result.user;
+            console.log(user)
+          })
+          .catch((error)=>{
+
+              console.error(error)
+          })
+             
+         }
+
     return (
         <Container className='mt-5'> 
         <Row >
 
-          <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'400px', backgroundColor:'gray'}} > 
+          <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'gray'}} > 
           
           <Form className='w-50 ms-5 mt-5'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -25,13 +48,19 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+        
+        
+        <p> if exsits not Accouts you go  <Link to='/register'> Register </Link> </p>
+          
         <Button variant="primary" type="submit">
         Login
         </Button>
-          <p> if exsits not Accouts you go  <Link to='/register'> Register </Link> </p>
+             
+             <br/>
+        <ButtonGroup className='mt-3' vertical>
+                <Button onClick={handlarGoogle }  className='mb-2' variant="outline-primary">   Google with login </Button>
+                <Button variant="outline-dark">  Github with login</Button>
+            </ButtonGroup>
       </Form>
       
       </Col>
