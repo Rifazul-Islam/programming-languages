@@ -14,7 +14,7 @@ const Navber = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home"> <img style={{width:'40px'}} src={imges} alt=''/>    Programimng Language
+          <Navbar.Brand href="#home"> <img style={{width:'40px'}} src={imges} alt=''/>   Learning Programming
        
           </Navbar.Brand>
            
