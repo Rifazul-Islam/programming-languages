@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from 'react';
-import { Button, Image, Tooltip } from 'react-bootstrap';
+import { Button, Image,  } from 'react-bootstrap';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -11,7 +11,7 @@ import { AuthContext } from '../../../router/AuthProvider/AuthProvider';
 const Navber = () => {
     const [open,setOpen] = useState(false)
     const {user,logOut} = useContext(AuthContext)
-       console.log(user)
+     
   
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">

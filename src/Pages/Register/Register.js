@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../router/AuthProvider/AuthProvider';
@@ -52,16 +53,18 @@ const Register = () => {
           }
 
          return creatProfile(profile)
-         
-
+        
     }
 
-
-
-
     return (
-        <div className='w-50 mx-auto mt-5'  style={{height:'450px', width:'500px', backgroundColor:'gray'}}>
-              <Form onSubmit={haddlarSummit} className='w-35'  >
+       
+
+<Container className='mt-5'> 
+<Row >
+
+  <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'gray'}} > 
+  
+  <Form onSubmit={haddlarSummit} className='w-35'  >
          <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Full Name</Form.Label>
           <Form.Control type="name" name="name" placeholder="Full Name" />
@@ -89,7 +92,19 @@ const Register = () => {
          Register
         </Button>
       </Form>
-        </div>
+
+</Col>
+   
+   <Col lg="4" sm="12 mt-3">
+
+        <img className='h-75 ms-5'  src='https://media.istockphoto.com/vectors/search-social-personal-profile-vector-illustration-vector-id1129247141?k=20&m=1129247141&s=612x612&w=0&h=X7B8ejkB7FMJZHGphHXbHqXRoQPLxxYfbSlxO3jMvHU=' alt=''/> 
+  </Col>
+
+</Row>
+
+</Container>
+
+
     );
 };
 
