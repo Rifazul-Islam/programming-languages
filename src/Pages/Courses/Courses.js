@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Card from '../Shawed/Card/Card';
 
 const Courses = () => {
@@ -25,7 +26,12 @@ const Courses = () => {
            
            <Col lg="2" sm="12 mt-3">
 
-                
+                    {
+                        courses.map(coues =>  <p key ={coues.id}>
+                              
+                              <Link to={`/details/${coues.id}`} > <p className =''>  {coues.name}</p></Link>  
+                            </p> )
+                    }
           </Col>
           
         </Row>
