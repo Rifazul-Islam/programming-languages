@@ -26,10 +26,10 @@ const Navber = () => {
             <Nav>
               
               <Link to='/courses' className='text-decoration-none fs-5 text me-3 text-white'> Courses</Link>
-              <Link  className='text-decoration-none fs-5 text me-3 text-white' > FAQ</Link>
-              <Link to = '/blog' className='text-decoration-none fs-5 text text-white me-3 ' > Blog</Link>
+              <Link to='/faq' className='text-decoration-none fs-5 text me-3 text-white' > FAQ</Link>
+              <Link to = '/blog' className='text-decoration-none fs-5 text text-white me-3 '> Blog</Link>
 
-              <Link to = '/login' className='text-decoration-none fs-5 text text-white ' >Login</Link>
+              <Link to = '/login' className='text-decoration-none fs-5 text text-white'>Login</Link>
               
             
              <Button onClick={()=> setOpen(!open)}  variant="dark"><span>{open? 'dark' : 'light'} </span> </Button>
