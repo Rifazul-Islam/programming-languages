@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 import Container from 'react-bootstrap/Container';
@@ -32,7 +32,7 @@ const Navber = () => {
               <Link to = '/login' className='text-decoration-none fs-5 text text-white ' >Login</Link>
               
             
-           
+             <Button onClick={()=> setOpen(!open)}  variant="dark"><span>{open? 'dark' : 'light'} </span> </Button>
                  
             </Nav>
           </Navbar.Collapse>
