@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -18,7 +18,7 @@ const Navber = () => {
         <Container>
           <Navbar.Brand href="#home"> <img style={{width:'40px'}} src={imges} alt=''/>   Learning Programming
        
-            {user?.displayName}
+           
           </Navbar.Brand>
            
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,12 +31,20 @@ const Navber = () => {
               <Link to='/courses' className='text-decoration-none fs-5 text me-3 text-white'> Courses</Link>
               <Link to='/faq' className='text-decoration-none fs-5 text me-3 text-white' > FAQ</Link>
               <Link to = '/blog' className='text-decoration-none fs-5 text text-white me-3 '> Blog</Link>
-
-              <Link to = '/login' className='text-decoration-none fs-5 text text-white'>Login</Link>
+              <Button onClick={()=> setOpen(!open)}  variant="dark"><span>{open? 'dark' : 'light'} </span> </Button>
+              
+              {user?.email? 
+              <Image
+                    
+              roundedCircle
+             style={{width:'40px'}}
+             src={user?.photoURL} >
+         </Image>
+             : <Link to = '/login' className='text-decoration-none fs-5 text text-white'>Login</Link>
               
             
-             <Button onClick={()=> setOpen(!open)}  variant="dark"><span>{open? 'dark' : 'light'} </span> </Button>
-                 
+            }
+                  
             </Nav>
           </Navbar.Collapse>
         </Container>

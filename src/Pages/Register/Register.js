@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../../router/AuthProvider/AuthProvider';
 
 const Register = () => {
 
     const [checked , setChecked] = useState(false)
+
+    const {haddlarCreateUser, creatProfile} = useContext(AuthContext)
 
   const hadlar = () =>{
 
@@ -21,9 +24,39 @@ const Register = () => {
         const password = form.password.value;
 
 
-        console.log(name,photoURL,email,password)
+       
+
+        haddlarCreateUser(email,password)
+        .then((result)=>{
+
+              const user = result.user;
+              console.log(user)
+              handlarProfileUpdate(name,photoURL)
+              form.reset()
+             
+        })
+
+        .catch((error)=>{
+          console.error(error)
+        })
             
     }
+
+    const handlarProfileUpdate = (name,photoURL) =>{
+
+          const profile ={
+
+            displayName:name,
+            photoURL:photoURL,
+           
+          }
+
+         return creatProfile(profile)
+         
+
+    }
+
+
 
 
     return (
