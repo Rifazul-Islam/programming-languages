@@ -14,7 +14,28 @@ import { AuthContext } from '../../router/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-       const {googleSigin} = useContext(AuthContext)
+       const {handlarSogin,googleSigin,gitHubSigin} = useContext(AuthContext)
+    
+          const haddlarSummit = (event)=>{
+    
+            event.preventDefault()
+            const form = event.target;
+            const email = form.email.value;
+            const password = form.password.value;
+             
+            handlarSogin(email,password)
+            .then((result)=>{
+
+                const user = result.user;
+                console.log(user)
+            })
+
+             .catch((error)=>{
+
+                   console.error(error)
+             })
+
+          }
 
 
          const handlarGoogle = ()=>{
@@ -28,7 +49,22 @@ const Login = () => {
 
               console.error(error)
           })
-             
+            
+         }
+
+
+         const handlarGithub = ()=>{
+    
+          gitHubSigin()
+          .then((result)=>{
+            const user = result.user;
+            console.log(user)
+          })
+          .catch((error)=>{
+
+              console.error(error)
+          })
+
          }
 
     return (
@@ -37,7 +73,7 @@ const Login = () => {
 
           <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'gray'}} > 
           
-          <Form className='w-50 ms-5 mt-5'>
+          <Form  onSubmit={haddlarSummit} className='w-50 ms-5 mt-5'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email" />
@@ -59,7 +95,7 @@ const Login = () => {
              <br/>
         <ButtonGroup className='mt-3' vertical>
                 <Button onClick={handlarGoogle }  className='mb-2' variant="outline-primary">   Google with login </Button>
-                <Button variant="outline-dark">  Github with login</Button>
+                <Button onClick={ handlarGithub} variant="outline-dark">  Github with login</Button>
             </ButtonGroup>
       </Form>
       

@@ -1,11 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../../firebase/firebase-confic';
 export const AuthContext = createContext()
 
 const auth = getAuth(app)
 
   const googleProvider = new GoogleAuthProvider()
+  const githubProvider = new GithubAuthProvider()
 
 const AuthProvider = ({children}) => {
 
@@ -22,11 +23,25 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser, profile)
      }
 
+          
+     const handlarSogin = (email,password)=>{
+
+              
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+         
      
        const googleSigin = ()=>{
 
             return signInWithPopup(auth, googleProvider)
        }
+
+        const gitHubSigin = ()=>{
+
+            return signInWithPopup(auth,githubProvider )
+        }
+       
 
 
       const logOut = () =>{
@@ -48,7 +63,9 @@ const AuthProvider = ({children}) => {
        const authInfo ={user,
         haddlarCreateUser, 
         creatProfile,
+        handlarSogin,
         googleSigin,
+        gitHubSigin,
         logOut,
     
     
