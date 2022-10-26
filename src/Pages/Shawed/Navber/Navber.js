@@ -35,18 +35,20 @@ const Navber = () => {
               
               {user?.email? 
             
-                 <>  <Image
+                 <> 
+               
+                  <Image
 
                  roundedCircle
                 style={{width:'40px'}}
-              
+                  title ={user?.displayName}
                 src={user?.photoURL}
                
-               
                 >
-                
+              
             </Image> 
-            <Button onClick={logOut}  variant="info">logOut</Button>
+            
+            <Button onClick={logOut}  variant="info"> logOut</Button>
             </>
                
                       
