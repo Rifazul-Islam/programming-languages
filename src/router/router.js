@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CartSummary from "../Pages/Shawed/CartSummary/CartSummary";
+import Checkout from "../Pages/Shawed/Checkout/Checkout";
 import Details from "../Pages/Shawed/Details/Details";
 import PrivateRoter from "./PrivateRouter/PrivateRoter";
 
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
 
         loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
     },
+
+      {
+          path:'/checkout/:id', element: <PrivateRoter> <Checkout></Checkout> </PrivateRoter>,
+          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+        },
 
     {
        path:'/cartSummary/:id', element: <PrivateRoter><CartSummary></CartSummary> </PrivateRoter> ,

@@ -21,7 +21,7 @@ const Details = () => {
   <div className="card-body">
     <h5 className="card-title"> {name} </h5>
     <p className="card-text">  {discripetion} </p>
-    <Link to={`/cartSummary/${id}`} className="btn btn-primary">Go somewhere</Link>
+    <Link to={`/checkout/${id}`} className="btn btn-primary">Go somewhere</Link>
   </div>
 </div>
         </div>

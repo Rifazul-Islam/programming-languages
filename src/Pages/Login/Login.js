@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { AuthContext } from '../../router/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -37,6 +38,7 @@ const Login = () => {
              .catch((error)=>{
 
                    console.error(error)
+                   toast.error(error.message)
              })
 
           }
