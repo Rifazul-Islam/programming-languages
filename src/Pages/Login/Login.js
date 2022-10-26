@@ -77,7 +77,7 @@ const Login = () => {
         <Container className='mt-5'> 
         <Row >
 
-          <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'gray'}} > 
+          <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'#F07055 '}} > 
           
           <Form  onSubmit={haddlarSummit} className='w-50 ms-5 mt-5'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
