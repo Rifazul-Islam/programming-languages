@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -15,7 +15,11 @@ import { AuthContext } from '../../router/AuthProvider/AuthProvider';
 const Login = () => {
 
        const {handlarSogin,googleSigin,gitHubSigin} = useContext(AuthContext)
-    
+        
+              const navigate = useNavigate();
+              const location = useLocation();
+              const from = location.state?.from?.pathname || "/";
+
           const haddlarSummit = (event)=>{
     
             event.preventDefault()
@@ -25,9 +29,9 @@ const Login = () => {
              
             handlarSogin(email,password)
             .then((result)=>{
-
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true });
             })
 
              .catch((error)=>{

@@ -6,7 +6,11 @@ import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import CartSummary from "../Pages/Shawed/CartSummary/CartSummary";
 import Details from "../Pages/Shawed/Details/Details";
+import PrivateRoter from "./PrivateRouter/PrivateRoter";
+
+
 
 export const router = createBrowserRouter([
     {path:'/', element: <Main></Main>, children:[
@@ -16,13 +20,18 @@ export const router = createBrowserRouter([
       {path:'/faq', element:<FAQ></FAQ>},
       {path:'/blog', element:<Blog></Blog>},
       {path:'/register', element:<Register></Register>},
-      {path:'/login', element:<Login></Login>},
+      {path:"/login", element:<Login></Login>},
 
       {
-        path: '/details/:id', element: <Details></Details>,
+        path: '/details/:id', element:  <Details></Details> ,
 
         loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
     },
+
+    {
+       path:'/cartSummary/:id', element: <PrivateRoter><CartSummary></CartSummary> </PrivateRoter> ,
+       loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+    }
 
       
     ]}
