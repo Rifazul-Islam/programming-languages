@@ -27,7 +27,7 @@ const Blog = () => {
       <div className="row g-0">
       <div className="card-body">
         <h5 className="card-title"> 2. Why are you using firebase? What other options do you have to implement authentication..?</h5>
-        <p className="card-text" style={{fontSize:'19px'}}>Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more</p>
+        <p className="card-text" style={{fontSize:'19px'}}>Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more .Authentication others way mongodb ,supabase etc</p>
      
       </div>
     </div>
@@ -55,7 +55,7 @@ const Blog = () => {
       <div className="row g-0">
     
       <div className="card-body">
-        <h5 className="card-title"> 1.What is Node? How does Node work ..?</h5>
+        <h5 className="card-title"> 4.What is Node? How does Node work ..?</h5>
         <p className="card-text" style={{fontSize:'19px'}}>Scalability, latency, and throughput are key performance indicators for web servers. Keeping the latency low and the throughput high while scaling up and out is not easy. Node.js is a JavaScript runtime environment that achieves low latency and high throughput by taking a “non-blocking” approach to serving requests. In other words, Node.js wastes no time or resources on waiting for I/O requests to return.</p>
      
       </div>

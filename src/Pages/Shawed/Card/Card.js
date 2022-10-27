@@ -3,8 +3,9 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Card = ({coures}) => {
-    console.log(coures)
+   
      const {img,name,discripetion,price,id} = coures
+     
      
     return (
         

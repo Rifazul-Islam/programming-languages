@@ -29,10 +29,12 @@ const Checkout = () => {
 <img src={img} className="card-img-top" alt="..."/>
 <div className="card-body">
 <h5 className="card-title">{name}</h5>
-<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<p className="card-text">
+
+</p>
 
 </div>
-<Link  onClick={handlar} className="btn btn-primary">Go some</Link>
+<Link  onClick={handlar} className="btn btn-primary">Go someWhere</Link>
 </div> 
 </div>
 </Col>

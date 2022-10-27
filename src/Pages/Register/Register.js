@@ -97,7 +97,7 @@ const Register = () => {
    
    <Col lg="4" sm="12 mt-3">
 
-        <img className='h-75 ms-5'  src='https://media.istockphoto.com/vectors/search-social-personal-profile-vector-illustration-vector-id1129247141?k=20&m=1129247141&s=612x612&w=0&h=X7B8ejkB7FMJZHGphHXbHqXRoQPLxxYfbSlxO3jMvHU=' alt=''/> 
+        <img className='h-75 '  src='https://media.istockphoto.com/vectors/search-social-personal-profile-vector-illustration-vector-id1129247141?k=20&m=1129247141&s=612x612&w=0&h=X7B8ejkB7FMJZHGphHXbHqXRoQPLxxYfbSlxO3jMvHU=' alt=''/> 
   </Col>
 
 </Row>

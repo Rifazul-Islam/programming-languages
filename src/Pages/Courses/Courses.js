@@ -6,10 +6,10 @@ import Card from '../Shawed/Card/Card';
 const Courses = () => {
 
       const [courses,setCourses] = useState([])
-          console.log(courses)
+        
       useEffect(()=>{
               
-          fetch('http://localhost:5000/courses')
+          fetch('https://programming-server-site.vercel.app/courses')
           .then(res => res.json())
           .then(data =>setCourses(data))
           
@@ -27,10 +27,10 @@ const Courses = () => {
            <Col lg="2" sm="12 mt-3">
 
                     {
-                        courses.map(coues =>  <p key ={coues.id}>
+                        courses.map(coues =>  <div key ={coues.id}>
                               
                               <Link to={`/details/${coues.id}`} > <p className =''>  {coues.name}</p></Link>  
-                            </p> )
+                            </div> )
                     }
           </Col>
           
