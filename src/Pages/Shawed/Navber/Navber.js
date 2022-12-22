@@ -28,7 +28,7 @@ const Navber = () => {
               
             </Nav>
             <Nav>
-            <Link to='/' className='text-decoration-none fs-5 text me-3 text-white'> Home</Link>
+           
               <Link to='/courses' className='text-decoration-none fs-5 text me-3 text-white'> Courses</Link>
               <Link to='/faq' className='text-decoration-none fs-5 text me-3 text-white' > FAQ</Link>
               <Link to = '/blog' className='text-decoration-none fs-5 text text-white me-3 '> Blog</Link>

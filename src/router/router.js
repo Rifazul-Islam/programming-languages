@@ -19,7 +19,7 @@ import PrivateRoter from "./PrivateRouter/PrivateRoter";
 export const router = createBrowserRouter([
     {path:'/', element: <Main></Main>, errorElement: <ErrorPage />, children:[
 
-      {path:'/', element:<Home></Home>},
+      {path:'/', element:<Courses></Courses>},
       {path:'/courses', element:<Courses></Courses>},
       {path:'/faq', element:<FAQ></FAQ>},
       {path:'/blog', element:<Blog></Blog>},
