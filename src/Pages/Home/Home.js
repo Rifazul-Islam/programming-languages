@@ -13,8 +13,8 @@ const Home = () => {
                 
                 <Col>
                
-                <Card  style={{height:'300px', border:'none'}} >
-      <Card.Img src="https://contentstatic.timesjobs.com/img/82332980/Master.jpg" alt="Card image" /> 
+                <Card  style={{MaxHeight:'300px', border:'none'}} >
+      <Card.Img src="https://www.rasmussen.edu/-/media/images/blogs/school-of-technology/whichprogramminglanguage_banner.jpg?la=en&hash=A475F6308BA982CC34A3E52C4EDDDC1C9AC2D1B8" alt="Card image" /> 
       <Card.ImgOverlay>
         
         

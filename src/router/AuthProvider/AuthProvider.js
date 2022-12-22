@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup,  updateProfile} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup,  signOut,  updateProfile} from 'firebase/auth';
 import app from '../../firebase/firebase-confic';
 export const AuthContext = createContext()
 
@@ -42,6 +42,11 @@ const AuthProvider = ({children}) => {
             setLoading(true)
             return signInWithPopup(auth,githubProvider )
         }
+
+        const logOut = ()=>{
+            setLoading(true)
+            return signOut(auth)
+        }
        
 
 
@@ -65,7 +70,7 @@ const AuthProvider = ({children}) => {
         handlarSogin,
         googleSigin,
         gitHubSigin,
-    
+        logOut
     
     
     }

@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from '../Shawed/Card/Card';
+import Spenar from '../Shawed/Spenar/Spenar';
 
 const Courses = () => {
 
       const [courses,setCourses] = useState([])
-        
+        const[loaded,setLoaded]=useState(true)
       useEffect(()=>{
-              
+            
           fetch('https://programming-server-site.vercel.app/courses')
           .then(res => res.json())
           .then(data =>setCourses(data))
-          
+          setLoaded(false) 
       },[])
+      if(loaded){
+          return <Spenar/>
+      }
       
     return (
         <Container className='mt-5'> 
@@ -24,12 +28,12 @@ const Courses = () => {
              }
       </Col>
            
-           <Col lg="2" sm="12 mt-3">
+           <Col  lg="2" sm="12 mt-3 ">
 
                     {
-                        courses.map(coues =>  <div key ={coues.id}>
+                        courses.map(coues => <div className='my-2' key ={coues.id}>
                               
-                              <Link to={`/details/${coues.id}`} > <p className =''>  {coues.name}</p></Link>  
+                              <Link to={`/details/${coues.id}`} >  <Button className='w-100' variant="outline-info" ><p style={{fontSize:'13px'}} className ='mt-2 d-flex justify-content-center'> {coues.name} </p></Button> </Link>  
                             </div> )
                     }
           </Col>

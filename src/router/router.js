@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       {path:"/login", element:<Login></Login>},
 
       {
-        path: '/details/:id', element:  <Details></Details> ,
+        path: '/details/:id', element: <Details></Details> ,
 
         loader: ({ params }) => fetch(`https://programming-server-site.vercel.app/courses/${params.id}`)
     },

@@ -62,9 +62,10 @@ const Register = () => {
 <Container className='mt-5'> 
 <Row >
 
-  <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'450px', backgroundColor:'gray'}} > 
+  <Col lg="8" sm="12" className='w-50' style={{height:'450px', backgroundColor:'gray'}} > 
   
-  <Form onSubmit={haddlarSummit} className='w-35'  >
+  <div >
+  <Form onSubmit={haddlarSummit} className=''  >
          <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Full Name</Form.Label>
           <Form.Control type="name" name="name" placeholder="Full Name" />
@@ -92,6 +93,7 @@ const Register = () => {
          Register
         </Button>
       </Form>
+  </div>
 
 </Col>
    

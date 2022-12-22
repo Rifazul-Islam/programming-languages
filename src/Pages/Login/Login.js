@@ -77,7 +77,7 @@ const Login = () => {
         <Container className='mt-5'> 
         <Row >
 
-          <Col lg="8" sm="12 "  className='ms-5 w-50' style={{height:'500px', backgroundColor:'#F07055 '}} > 
+          <Col lg="8" sm="12 " className='ms-5 w-50' style={{height:'500px', backgroundColor:'#22F0B2'}} > 
           
           <Form  onSubmit={haddlarSummit} className='w-50 ms-5 mt-5'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -109,7 +109,7 @@ const Login = () => {
            
            <Col lg="4" sm="12 mt-3">
 
-                <img className='h-75 ms-5'  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYLctYd48YA0yHmwbce3QsLzsYnKAUPAf-sdWfp3J9CJYcB-fGc5CxaC6T2RXTr3RyFxY&usqp=CAU' alt=''/> 
+                <img className='h-75 ms-5' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYLctYd48YA0yHmwbce3QsLzsYnKAUPAf-sdWfp3J9CJYcB-fGc5CxaC6T2RXTr3RyFxY&usqp=CAU' alt=''/> 
           </Col>
           
         </Row>
